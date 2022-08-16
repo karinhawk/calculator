@@ -1,22 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: "Quicksand";
 }
 
 .calculator {
-    width: 50vw;
-    height: 80vh;
-    border: 2px solid red;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(6, 116, 116);
+    border: 2px solid rgb(6, 116, 116);
+    border-radius: 5px;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: repeat(7 1fr);
+    grid-template-areas: 
+    "output output output output"
+    "output output output output"
+    "AC plusMinus percentage divide"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "brackets zero decimal equals";
 
-    &__button {
-        
-
-
-    }
     &__output {
-        height: 10vh;
+        grid-area: output;
+        background-color: darkslategray;
+    }
+    &__button {
+        background-color: darkcyan;
+        border: 2px solid rgb(6, 116, 116);
+        font-size: 30px;
+        color: white;
+        border-radius: 5px;
+        &:hover {
+            background-color: rgb(24, 89, 91);
+        }
+    }
+    &__AC {
+        grid-area: AC;
+    }
+    &__plusMinus {
+        grid-area: plusMinus;
+    }
+    &__percentage {
+        grid-area: percentage;
+    }
+    &__divide {
+        grid-area: divide;
+    }
+    &__7 {
+        grid-area: seven;
+    }
+    &__8 {
+        grid-area: eight;
+    }
+    &__9 {
+        grid-area: nine;
+    }
+    &__multiply {
+        grid-area: multiply;
+    }
+    &__4 {
+        grid-area: four;
+    }
+    &__5 {
+        grid-area: five;
+    }
+    &__6 {
+        grid-area: six;
+    }
+    &__minus {
+        grid-area: minus;
+    }
+    &__1 {
+        grid-area: one;
+    }
+    &__2 {
+        grid-area: two;
+    }
+    &__3 {
+        grid-area: three;
+    }
+    &__plus {
+        grid-area: plus;
+    }
+    &__brackets {
+        grid-area: brackets;
+    }
+    &__0 {
+        grid-area: zero;
+    }
+    &__decimal {
+        grid-area: decimal;
+    }
+    &__equals {
+        grid-area: equals;
     }
 }
+
+@media screen and (min-width: 720px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .calculator {
+        width: 40vw;
+        height: 100vh;
+    }
+}
+   

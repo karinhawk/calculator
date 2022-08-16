@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,31 +7,35 @@
     <title>Cally L</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="calculator">
-    <output class="calculator__output"></output>
-    <input type="button" value="AC" class="calculator__button calculator__AC"></input>
-    <input type="button" value="+/-" class="calculator__button calculator__plusMinus"></input>
-    <input type="button" value="%" class="calculator__button"></input>
-    <input type="button" value="÷" class="calculator__button"></input>
-    <input type="button" value="7" class="calculator__button"></input>
-    <input type="button" value="8" class="calculator__button"></input>
-    <input type="button" value="9" class="calculator__button"></input>
-    <input type="button" value="x" class="calculator__button"></input>
-    <input type="button" value="4" class="calculator__button"></input>
-    <input type="button" value="5" class="calculator__button"></input>
-    <input type="button" value="6" class="calculator__button"></input>
-    <input type="button" value="-" class="calculator__button"></input>
-    <input type="button" value="1" class="calculator__button"></input>
-    <input type="button" value="2" class="calculator__button"></input>
-    <input type="button" value="3" class="calculator__button"></input>
-    <input type="button" value="+" class="calculator__button"></input>
-    <input type="button" value="()" class="calculator__button"></input>
-    <input type="button" value="0" class="calculator__button"></input>
-    <input type="button" value="." class="calculator__button"></input>
-    <input type="button" value="=" class="calculator__button"></input>
-  
+        <output class="calculator__output"></output>
+        <input type="reset" value="AC" class="calculator__button calculator__AC" onclick="handleReset(event)"></input>
+        <input type="button" value="+/-" class="calculator__button calculator__plusMinus"
+            onclick="clickButton(percentage)"></input>
+        <input type="button" value="%" class="calculator__button calculator__percentage "
+            onclick="clickButton(percentage)"></input>
+        <input type="button" value="÷" class="calculator__button calculator__divide" onclick="clickButton(percentage)"></input>
+        <input type="button" value="7" class="calculator__button calculator__7" onclick="clickButton(percentage)"></input>
+        <input type="button" value="8" class="calculator__button calculator__8" onclick="clickButton(percentage)"></input>
+        <input type="button" value="9" class="calculator__button calculator__9" onclick="clickButton(percentage)"></input>
+        <input type="button" value="x" class="calculator__button calculator__multiply" onclick="clickButton(percentage)"></input>
+        <input type="button" value="4" class="calculator__button calculator__4" onclick="clickButton(percentage)"></input>
+        <input type="button" value="5" class="calculator__button calculator__5" onclick="clickButton(percentage)"></input>
+        <input type="button" value="6" class="calculator__button calculator__6" onclick="clickButton(percentage)"></input>
+        <input type="button" value="-" class="calculator__button calculator__minus" onclick="clickButton(percentage)"></input>
+        <input type="button" value="1" class="calculator__button calculator__1" onclick="clickButton(percentage)"></input>
+        <input type="button" value="2" class="calculator__button calculator__2" onclick="clickButton(percentage)"></input>
+        <input type="button" value="3" class="calculator__button calculator__3" onclick="clickButton(percentage)"></input>
+        <input type="button" value="+" class="calculator__button calculator__plus" onclick="clickButton(percentage)"></input>
+        <input type="button" value="()" class="calculator__button calculator__brackets" onclick="clickButton(percentage)"></input>
+        <input type="button" value="0" class="calculator__button calculator__0" onclick="clickButton(percentage)"></input>
+        <input type="button" value="." class="calculator__button calculator__decimal" onclick="clickButton(percentage)"></input>
+        <input type="button" value="=" class="calculator__button calculator__equals" onclick="clickButton(percentage)"></input>
 
-    <script src="./script.js"></script>
+
+        <script src="./script.js"></script>
 </body>
+
 </html>

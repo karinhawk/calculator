@@ -1,16 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Quicksand";
 }
 
 .calculator {
-  width: 50vw;
-  height: 80vh;
-  border: 2px solid red;
+  width: 100vw;
+  height: 100vh;
+  background-color: #067474;
+  border: 2px solid #067474;
+  border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4 1fr);
+  grid-template-rows: repeat(7 1fr);
+  grid-template-areas: "output output output output" "output output output output" "AC plusMinus percentage divide" "seven eight nine multiply" "four five six minus" "one two three plus" "brackets zero decimal equals";
 }
 .calculator__output {
-  height: 10vh;
+  grid-area: output;
+  background-color: darkslategray;
+}
+.calculator__button {
+  background-color: darkcyan;
+  border: 2px solid #067474;
+  font-size: 30px;
+  color: white;
+  border-radius: 5px;
+}
+.calculator__button:hover {
+  background-color: #18595b;
+}
+.calculator__AC {
+  grid-area: AC;
+}
+.calculator__plusMinus {
+  grid-area: plusMinus;
+}
+.calculator__percentage {
+  grid-area: percentage;
+}
+.calculator__divide {
+  grid-area: divide;
+}
+.calculator__7 {
+  grid-area: seven;
+}
+.calculator__8 {
+  grid-area: eight;
+}
+.calculator__9 {
+  grid-area: nine;
+}
+.calculator__multiply {
+  grid-area: multiply;
+}
+.calculator__4 {
+  grid-area: four;
+}
+.calculator__5 {
+  grid-area: five;
+}
+.calculator__6 {
+  grid-area: six;
+}
+.calculator__minus {
+  grid-area: minus;
+}
+.calculator__1 {
+  grid-area: one;
+}
+.calculator__2 {
+  grid-area: two;
+}
+.calculator__3 {
+  grid-area: three;
+}
+.calculator__plus {
+  grid-area: plus;
+}
+.calculator__brackets {
+  grid-area: brackets;
+}
+.calculator__0 {
+  grid-area: zero;
+}
+.calculator__decimal {
+  grid-area: decimal;
+}
+.calculator__equals {
+  grid-area: equals;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calculator {
+    width: 40vw;
+    height: 100vh;
+  }
 }
