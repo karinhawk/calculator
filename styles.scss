@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    width: 50vw;
+    height: 80vh;
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    &__button {
+        
+
+
+    }
+    &__output {
+        height: 10vh;
+    }
+}
