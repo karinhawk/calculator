@@ -4,31 +4,36 @@ var numbers = document.querySelectorAll('.calculator-number');
 var operators = document.querySelectorAll('.calculator-operator');
 var output = document.querySelector('.calculator__output');
 var clearButton = document.querySelector('#calculator-AC');
+var equals = document.querySelector('.calculator-equals');
 console.log(output); //let firstNumber forEach  add eventListener which stores value when click on butt0n
 
+var totalArray = [];
 var firstNumber = [];
-numbers.forEach(function (number) {
-  number.addEventListener("click", function () {
-    firstNumber.push(number.value);
-    output.textContent = firstNumber.join("");
-    return firstNumber;
-  });
-});
-console.log(firstNumber);
 var secondNumber = [];
 numbers.forEach(function (number) {
   number.addEventListener("click", function () {
-    secondNumber.push(number.value);
-    output.textContent = secondNumber.join("");
-    return secondNumber;
+    if (!totalArray.includes(operators)) {
+      firstNumber.push(number.value);
+      totalArray.push(number.value);
+      output.textContent = totalArray.join("");
+      return firstNumber;
+    } else {
+      secondNumber.push(number.value);
+      totalArray.push(number.value);
+      output.textContent = totalArray.join("");
+      return secondNumber;
+    }
   });
 });
+console.log(totalArray);
+console.log(firstNumber);
 console.log(secondNumber);
 var operatorArr = [];
 operators.forEach(function (operator) {
   operator.addEventListener("click", function () {
     operatorArr.push(operator.value);
-    output.textContent = operatorArr.join(" ");
+    totalArray.push(operator.value);
+    output.textContent = totalArray.join("");
     return operatorArr;
   });
 });
@@ -39,7 +44,11 @@ clearButton.addEventListener("click", function (event) {
   firstNumber = [];
   secondNumber = [];
   operatorArr = [];
-});
+  totalArray = [];
+}); //when equals- text content is answer
+//equals button
+//switch case the operators to functions!!!!!!!
+//style the text and align on the right hand side maybe
 
 var addition = function addition(number1, number2) {
   additionAnswer = number1 + number2;

@@ -1,39 +1,51 @@
 
 
 const numbers = document.querySelectorAll('.calculator-number');
-const operators = document.querySelectorAll('.calculator-operator')
+const operators = document.querySelectorAll('.calculator-operator');
 const output = document.querySelector('.calculator__output');
 const clearButton = document.querySelector('#calculator-AC');
+const equals = document.querySelector('.calculator-equals');
 console.log(output);
 
 
 //let firstNumber forEach  add eventListener which stores value when click on butt0n
 
+
+
+
+
+
+let totalArray = [];
 let firstNumber = [];
+let secondNumber = [];
  numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        firstNumber.push(number.value);
-         output.textContent = firstNumber.join("");
-         return firstNumber;
+        if (!totalArray.includes(operators)) {
+            firstNumber.push(number.value);
+            totalArray.push(number.value);
+            output.textContent = totalArray.join("");
+            return firstNumber;
+        } else {
+            secondNumber.push(number.value);
+            totalArray.push(number.value);
+            output.textContent = totalArray.join("");
+            return secondNumber;
+        }
+         
     })
     })
+    console.log(totalArray);
     console.log(firstNumber);
 
-let secondNumber = [];
-numbers.forEach((number) => {
-    number.addEventListener("click", () => {
-        secondNumber.push(number.value);
-        output.textContent = secondNumber.join("");
-        return secondNumber;
-    })
-    })
+
     console.log(secondNumber);
 
 let operatorArr = [];
 operators.forEach((operator) => {
     operator.addEventListener("click", () => {
         operatorArr.push(operator.value);
-        output.textContent = operatorArr.join(" ");
+        totalArray.push(operator.value);
+        output.textContent = totalArray.join("");
         return operatorArr;
     })
 })
@@ -45,7 +57,16 @@ clearButton.addEventListener("click", (event) => {
     firstNumber = [];
     secondNumber = [];
     operatorArr = [];
+    totalArray = [];
 });
+
+
+//when equals- text content is answer
+//equals button
+//switch case the operators to functions!!!!!!!
+//style the text and align on the right hand side maybe
+
+
 
 
 
