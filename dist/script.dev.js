@@ -1,23 +1,45 @@
 "use strict";
 
-//give values to buttons
-//buttons array
-//link each button to array index?
-//loop through array??
-//make show up on output
-//calculations
-var numbers = document.querySelectorAll('.calculator-number'); //let firstNumber forEach  add eventListener which stores value when click on butt0n
+var numbers = document.querySelectorAll('.calculator-number');
+var operators = document.querySelectorAll('.calculator-operator');
+var output = document.querySelector('.calculator__output');
+var clearButton = document.querySelector('#calculator-AC');
+console.log(output); //let firstNumber forEach  add eventListener which stores value when click on butt0n
 
 var firstNumber = [];
 numbers.forEach(function (number) {
-  number.addEventListener("click", function (event) {
-    firstNumber.push(event.target.value);
+  number.addEventListener("click", function () {
+    firstNumber.push(number.value);
+    output.textContent = firstNumber.join("");
+    return firstNumber;
   });
 });
 console.log(firstNumber);
-console.log(numbers);
-var output = document.getElementById('calculator-AC');
-console.log(output);
+var secondNumber = [];
+numbers.forEach(function (number) {
+  number.addEventListener("click", function () {
+    secondNumber.push(number.value);
+    output.textContent = secondNumber.join("");
+    return secondNumber;
+  });
+});
+console.log(secondNumber);
+var operatorArr = [];
+operators.forEach(function (operator) {
+  operator.addEventListener("click", function () {
+    operatorArr.push(operator.value);
+    output.textContent = operatorArr.join(" ");
+    return operatorArr;
+  });
+});
+console.log(operatorArr); //this will clear the display and clear the arrays to start over each time!
+
+clearButton.addEventListener("click", function (event) {
+  output.textContent = " ";
+  firstNumber = [];
+  secondNumber = [];
+  operatorArr = [];
+});
 
 var addition = function addition(number1, number2) {
   additionAnswer = number1 + number2;

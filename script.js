@@ -1,26 +1,51 @@
-//give values to buttons
-//buttons array
-//link each button to array index?
-//loop through array??
-//make show up on output
-//calculations
+
 
 const numbers = document.querySelectorAll('.calculator-number');
+const operators = document.querySelectorAll('.calculator-operator')
+const output = document.querySelector('.calculator__output');
+const clearButton = document.querySelector('#calculator-AC');
+console.log(output);
+
 
 //let firstNumber forEach  add eventListener which stores value when click on butt0n
 
 let firstNumber = [];
-numbers.forEach((number) => {
-    number.addEventListener("click", (event) => {
-        firstNumber.push(event.target.value);
+ numbers.forEach((number) => {
+    number.addEventListener("click", () => {
+        firstNumber.push(number.value);
+         output.textContent = firstNumber.join("");
+         return firstNumber;
     })
     })
     console.log(firstNumber);
 
-console.log(numbers);
+let secondNumber = [];
+numbers.forEach((number) => {
+    number.addEventListener("click", () => {
+        secondNumber.push(number.value);
+        output.textContent = secondNumber.join("");
+        return secondNumber;
+    })
+    })
+    console.log(secondNumber);
 
-const output = document.getElementById('calculator-AC');
-console.log(output);
+let operatorArr = [];
+operators.forEach((operator) => {
+    operator.addEventListener("click", () => {
+        operatorArr.push(operator.value);
+        output.textContent = operatorArr.join(" ");
+        return operatorArr;
+    })
+})
+console.log(operatorArr);
+
+//this will clear the display and clear the arrays to start over each time!
+clearButton.addEventListener("click", (event) => {
+    output.textContent = (" ");
+    firstNumber = [];
+    secondNumber = [];
+    operatorArr = [];
+});
 
 
 
