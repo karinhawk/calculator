@@ -1,30 +1,51 @@
-//const output = document.querySelector(".calculator__output")
+//give values to buttons
+//buttons array
+//link each button to array index?
+//loop through array??
+//make show up on output
+//calculations
 
-// const handleReset = (event) => {
-//     output.innerHTML = " ";
-// }
+const numbers = document.querySelectorAll('.calculator-number');
 
-// const clickButton = (percentage) => {
-    
-//     let clickedButton = 
+//let firstNumber forEach  add eventListener which stores value when click on butt0n
 
-//     switch (clickedButton) {
+let firstNumber = [];
+numbers.forEach((number) => {
+    number.addEventListener("click", (event) => {
+        firstNumber.push(event.target.value);
+    })
+    })
+    console.log(firstNumber);
+
+console.log(numbers);
+
+const output = document.getElementById('calculator-AC');
+console.log(output);
 
 
-//     }
 
 
 
 
 
-//     //switch case time! switch case = button clicked
-//     // output = output.innerhtml
-// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 const addition = (number1, number2) => {
     additionAnswer = number1 + number2;
     return additionAnswer;
 }
+
 console.log(addition(2, 6));
 
 

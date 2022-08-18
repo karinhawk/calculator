@@ -18,7 +18,7 @@
     grid-template-areas: 
     "output output output output"
     "output output output output"
-    "AC plusMinus percentage divide"
+    "AC AC percentage divide"
     "seven eight nine multiply"
     "four five six minus"
     "one two three plus"
@@ -33,16 +33,21 @@
         border: 2px solid rgb(6, 116, 116);
         font-size: 30px;
         color: white;
-        border-radius: 5px;
+        border-radius: 10px;
         &:hover {
             background-color: rgb(24, 89, 91);
         }
     }
-    &__AC {
+    #calculator-AC {
         grid-area: AC;
-    }
-    &__plusMinus {
-        grid-area: plusMinus;
+        background-color: darkcyan;
+        border: 2px solid rgb(6, 116, 116);
+        font-size: 30px;
+        color: white;
+        border-radius: 10px;
+        &:hover {
+            background-color: rgb(24, 89, 91);
+        }
     }
     &__percentage {
         grid-area: percentage;

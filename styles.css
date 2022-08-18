@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: repeat(4 1fr);
   grid-template-rows: repeat(7 1fr);
-  grid-template-areas: "output output output output" "output output output output" "AC plusMinus percentage divide" "seven eight nine multiply" "four five six minus" "one two three plus" "brackets zero decimal equals";
+  grid-template-areas: "output output output output" "output output output output" "AC AC percentage divide" "seven eight nine multiply" "four five six minus" "one two three plus" "brackets zero decimal equals";
 }
 .calculator__output {
   grid-area: output;
@@ -25,16 +25,21 @@
   border: 2px solid #067474;
   font-size: 30px;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .calculator__button:hover {
   background-color: #18595b;
 }
-.calculator__AC {
+.calculator #calculator-AC {
   grid-area: AC;
+  background-color: darkcyan;
+  border: 2px solid #067474;
+  font-size: 30px;
+  color: white;
+  border-radius: 10px;
 }
-.calculator__plusMinus {
-  grid-area: plusMinus;
+.calculator #calculator-AC:hover {
+  background-color: #18595b;
 }
 .calculator__percentage {
   grid-area: percentage;
