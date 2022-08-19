@@ -19,21 +19,19 @@ var handleNumberPress = function handleNumberPress(event) {
     firstNumber += inputtedNumber.toString();
     totalOutput = firstNumber;
     output.textContent = totalOutput;
-    console.log("is getting here", firstNumber);
   } else {
     secondNumber += inputtedNumber.toString();
     totalOutput = firstNumber + operator + secondNumber;
     output.textContent = totalOutput;
-    console.log("is here instead", secondNumber);
   }
 };
 
 numbers.forEach(function (number) {
   number.addEventListener("click", handleNumberPress);
-});
-console.log(firstNumber);
-console.log(secondNumber);
-console.log(operator); //OPERATORS 
+}); //   console.log(firstNumber);
+//   console.log(secondNumber);
+//   console.log(operator);
+//OPERATORS 
 
 var handleOperatorPress = function handleOperatorPress(event) {
   console.log(event);
@@ -45,7 +43,7 @@ var handleOperatorPress = function handleOperatorPress(event) {
 
 operators.forEach(function (operator) {
   operator.addEventListener("click", handleOperatorPress);
-}); //CLEAR THE DISPLAY!
+}); //CLEAR THE DISPLAY AND ALL STRINGS!
 
 clearButton.addEventListener("click", function (event) {
   output.textContent = " ";
@@ -53,51 +51,51 @@ clearButton.addEventListener("click", function (event) {
   secondNumber = "";
   operator = "";
   totalOutput = "";
-}); //switch case function= pull when equals is clicked
+});
+console.log(firstNumber);
+console.log(secondNumber);
 
-var addition = function addition(firstNumber, secondNumber) {
-  var additionAnswer = firstNumber + secondNumber;
-  output.textContent = additionAnswer;
+var addition = function addition(a, b) {
+  var additionAnswer = a + b;
+  return additionAnswer;
 };
 
-console.log(additionAnswer);
-
-var subtraction = function subtraction(firstNumber, secondNumber) {
-  var subtractionAnswer = firstNumber - secondNumber;
-  output.textContent = subtractionAnswer;
+var subtraction = function subtraction(a, b) {
+  var subtractionAnswer = a - b;
   return subtractionAnswer;
 };
 
-console.log(subtractionAnswer);
-
-var multiplication = function multiplication(firstNumber, secondNumber) {
-  var multiplicationAnswer = firstNumber * secondNumber;
+var multiplication = function multiplication(a, b) {
+  var multiplicationAnswer = a * b;
   return multiplicationAnswer;
 };
 
-console.log(multiplicationAnswer);
-
-var division = function division(firstNumber, secondNumber) {
-  var divisionAnswer = firstNumber / secondNumber;
+var division = function division(a, b) {
+  var divisionAnswer = a / b;
   return divisionAnswer;
-};
+}; //switch case function= pull when equals is clicked
+
 
 var handleOperator = function handleOperator() {
   switch (operator) {
     case "+":
-      functionToPull = addition;
+      additionResult = addition(parseInt(firstNumber), parseInt(secondNumber));
+      output.textContent = additionResult;
       break;
 
     case "-":
-      functionToPull = subtraction;
+      subtractionResult = subtraction(parseInt(firstNumber), parseInt(secondNumber));
+      output.textContent = subtractionResult;
       break;
 
     case "÷":
-      functionToPull = division;
+      divisionResult = division(parseInt(firstNumber), parseInt(secondNumber));
+      output.textContent = divisionResult;
       break;
 
     case "x":
-      functionToPull = multiplication;
+      multiplicationResult = multiplication(parseInt(firstNumber), parseInt(secondNumber));
+      output.textContent = multiplicationResult;
       break;
   }
 };

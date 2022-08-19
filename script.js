@@ -13,19 +13,18 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 
+
 //NUMBERS
 const handleNumberPress = (event) => {
     let inputtedNumber = event.target.value;
    if (operator === "") {
     firstNumber += inputtedNumber.toString(); 
     totalOutput = firstNumber;
-    output.textContent = totalOutput;          
-    console.log("is getting here", firstNumber);
+    output.textContent = totalOutput;
    } else {
     secondNumber += inputtedNumber.toString();
     totalOutput = firstNumber + operator + secondNumber;
     output.textContent = totalOutput;
-    console.log("is here instead", secondNumber);
    }
 }
 
@@ -33,9 +32,9 @@ numbers.forEach((number) => {
     number.addEventListener("click", handleNumberPress);
   });
 
-  console.log(firstNumber);
-  console.log(secondNumber);
-  console.log(operator);
+//   console.log(firstNumber);
+//   console.log(secondNumber);
+//   console.log(operator);
 
 //OPERATORS 
 
@@ -53,7 +52,7 @@ operators.forEach((operator) => {
 
 
 
-//CLEAR THE DISPLAY!
+//CLEAR THE DISPLAY AND ALL STRINGS!
 clearButton.addEventListener("click", (event) => {
   output.textContent = " ";
   firstNumber = "";
@@ -62,52 +61,54 @@ clearButton.addEventListener("click", (event) => {
   totalOutput = "";
 });
 
+console.log(firstNumber);
+console.log(secondNumber);
 
 
-
-//switch case function= pull when equals is clicked
-
-
-const addition = (firstNumber, secondNumber) => {
-  let additionAnswer = firstNumber + secondNumber;
-  output.textContent = additionAnswer;
+const addition = (a, b) => {
+  let additionAnswer = a + b;
+  return additionAnswer;
 };
-console.log(additionAnswer);
 
-const subtraction = (firstNumber, secondNumber) => {
-  let subtractionAnswer = firstNumber - secondNumber;
-  output.textContent = subtractionAnswer;
+
+const subtraction = (a, b) => {
+  let subtractionAnswer = a - b;
   return subtractionAnswer;
 };
-console.log(subtractionAnswer);
 
 
-const multiplication = (firstNumber, secondNumber) => {
-  let multiplicationAnswer = firstNumber * secondNumber;
+
+const multiplication = (a, b) => {
+  let multiplicationAnswer = a * b;
   return multiplicationAnswer;
 };
-console.log(multiplicationAnswer);
 
 
-const division = (firstNumber, secondNumber) => {
-  let divisionAnswer = firstNumber / secondNumber;
+
+const division = (a, b) => {
+  let divisionAnswer = a / b;
   return divisionAnswer;
 };
 
+//switch case function= pull when equals is clicked
 const handleOperator = () => {
 
     switch (operator) {
         case "+":
-            functionToPull = addition;
+            additionResult = addition(parseInt(firstNumber), parseInt(secondNumber));
+            output.textContent = additionResult;
             break;
         case "-":
-            functionToPull = subtraction;
+            subtractionResult = subtraction(parseInt(firstNumber), parseInt(secondNumber));
+            output.textContent = subtractionResult;
             break;
         case "÷":
-            functionToPull = division;
+            divisionResult = division(parseInt(firstNumber), parseInt(secondNumber));
+            output.textContent = divisionResult;
             break;
         case "x":
-            functionToPull = multiplication;
+            multiplicationResult = multiplication(parseInt(firstNumber), parseInt(secondNumber));
+            output.textContent = multiplicationResult;
             break;
     }
     }
