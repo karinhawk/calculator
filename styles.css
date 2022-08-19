@@ -19,6 +19,9 @@
 .calculator__output {
   grid-area: output;
   background-color: darkslategray;
+  color: white;
+  font-size: 30px;
+  text-align: end;
 }
 .calculator__button {
   background-color: darkcyan;

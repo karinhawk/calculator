@@ -1,11 +1,11 @@
 "use strict";
 
-var numbers = document.querySelectorAll('.calculator-number');
-var operators = document.querySelectorAll('.calculator-operator');
-var output = document.querySelector('.calculator__output');
-var clearButton = document.querySelector('#calculator-AC');
-var equals = document.querySelector('.calculator-equals');
-console.log(output); //let firstNumber forEach  add eventListener which stores value when click on butt0n
+var numbers = document.querySelectorAll(".calculator-number");
+var operators = document.querySelectorAll(".calculator-operator");
+var output = document.querySelector(".calculator__output");
+var clearButton = document.querySelector("#calculator-AC");
+var equals = document.querySelector(".calculator-equals");
+console.log(operators); //let firstNumber forEach  add eventListener which stores value when click on butt0n
 
 var totalArray = [];
 var firstNumber = [];
@@ -45,35 +45,52 @@ clearButton.addEventListener("click", function (event) {
   secondNumber = [];
   operatorArr = [];
   totalArray = [];
-}); //when equals- text content is answer
-//equals button
-//switch case the operators to functions!!!!!!!
-//style the text and align on the right hand side maybe
+}); //switch case function= pull when equals is clicked
 
-var addition = function addition(number1, number2) {
-  additionAnswer = number1 + number2;
+var handleOperator = function handleOperator() {
+  switch (operators) {
+    case totalArray.includes("+"):
+      functionToPull = addition;
+      break;
+
+    case totalArray.includes("-"):
+      functionToPull = subtraction;
+      break;
+
+    case totalArray.includes("÷"):
+      functionToPull = division;
+      break;
+
+    case totalArray.includes("x"):
+      functionToPull = multiplication;
+      break;
+  }
+};
+
+equals.addEventListener("click", handleOperator);
+
+var addition = function addition(firstNumber, secondNumber) {
+  var additionAnswer = firstNumber + secondNumber;
+  output.textContent = additionAnswer;
   return additionAnswer;
 };
 
-console.log(addition(2, 6));
+console.log(additionAnswer);
 
-var subtraction = function subtraction(number1, number2) {
-  subtractionAnswer = number1 - number2;
+var subtraction = function subtraction(firstNumber, secondNumber) {
+  var subtractionAnswer = firstNumber - secondNumber;
+  output.textContent = subtractionAnswer;
   return subtractionAnswer;
 };
 
-console.log(subtraction(12, 1));
+console.log(subtractionAnswer);
 
 var multiplication = function multiplication(number1, number2) {
-  multiplicationAnswer = number1 * number2;
+  var multiplicationAnswer = number1 * number2;
   return multiplicationAnswer;
 };
 
-console.log(multiplication(30, 2));
-
 var division = function division(number1, number2) {
-  divisionAnswer = number1 / number2;
+  var divisionAnswer = number1 / number2;
   return divisionAnswer;
 };
-
-console.log(division(40, 2));

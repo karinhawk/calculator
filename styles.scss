@@ -27,6 +27,9 @@
     &__output {
         grid-area: output;
         background-color: darkslategray;
+        color: white;
+        font-size: 30px;
+        text-align: end;
     }
     &__button {
         background-color: darkcyan;
