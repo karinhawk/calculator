@@ -33,9 +33,6 @@ numbers.forEach((number) => {
     number.addEventListener("click", handleNumberPress);
 });
 
-//   console.log(firstNumber);
-//   console.log(secondNumber);
-//   console.log(operator);
 
 //OPERATORS 
 
@@ -86,7 +83,13 @@ const division = (a, b) => {
     return divisionAnswer;
 };
 
+const percentageConversion = (a) => {
+    let percentageAnswer = a / 100;
+    return percentageAnswer;
+}
+
 //switch case function= pull when equals is clicked
+//parse float to turn string numbers into numbers and allow for decimal calculations
 const handleOperator = () => {
 
     switch (operator) {
@@ -106,6 +109,9 @@ const handleOperator = () => {
             multiplicationResult = multiplication(parseFloat(firstNumber), parseFloat(secondNumber));
             output.textContent = multiplicationResult;
             break;
+        case "%":
+            percentageResult = percentageConversion(parseFloat(firstNumber));
+            output.textContent = percentageResult;
     }
     firstNumber = "";
     secondNumber = "";

@@ -30,10 +30,7 @@ var handleNumberPress = function handleNumberPress(event) {
 
 numbers.forEach(function (number) {
   number.addEventListener("click", handleNumberPress);
-}); //   console.log(firstNumber);
-//   console.log(secondNumber);
-//   console.log(operator);
-//OPERATORS 
+}); //OPERATORS 
 
 var handleOperatorPress = function handleOperatorPress(event) {
   operator = event.target.value;
@@ -71,7 +68,13 @@ var multiplication = function multiplication(a, b) {
 var division = function division(a, b) {
   var divisionAnswer = a / b;
   return divisionAnswer;
+};
+
+var percentageConversion = function percentageConversion(a) {
+  var percentageAnswer = a / 100;
+  return percentageAnswer;
 }; //switch case function= pull when equals is clicked
+//parse float to turn string numbers into numbers and allow for decimal calculations
 
 
 var handleOperator = function handleOperator() {
@@ -95,6 +98,10 @@ var handleOperator = function handleOperator() {
       multiplicationResult = multiplication(parseFloat(firstNumber), parseFloat(secondNumber));
       output.textContent = multiplicationResult;
       break;
+
+    case "%":
+      percentageResult = percentageConversion(parseFloat(firstNumber));
+      output.textContent = percentageResult;
   }
 
   firstNumber = "";
