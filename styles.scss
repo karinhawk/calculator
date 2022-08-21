@@ -1,56 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+
+$font: "Alumni Sans Pinstripe";
+$color-primary: darkcyan;
+$color-secondary: rgb(6, 116, 116);
+$color-tertiary: darkslategray;
+$color-hover: rgb(54, 105, 107);
+$color-white: white;
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Quicksand";
+    font-family: $font;
+    font-weight: bolder;
 }
 
 .calculator {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(6, 116, 116);
-    border: 2px solid rgb(6, 116, 116);
-    border-radius: 5px;
+    background-color: $color-secondary;
+    border: 2px solid $color-secondary;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4 1fr);
-    grid-template-rows: repeat(7 1fr);
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    "output output output output"
     "output output output output"
     "AC AC percentage divide"
     "seven eight nine multiply"
     "four five six minus"
     "one two three plus"
-    "brackets zero decimal equals";
+    "zero zero decimal equals";
 
+    &__heading {
+        height: 0em;
+    }
     &__output {
         grid-area: output;
-        background-color: darkslategray;
-        color: white;
         font-size: 30px;
+        padding-top: 8vh;
+        padding-right: 1vw;
         text-align: end;
+        border-radius: 10px;
+        background-color: $color-tertiary;
+        color: $color-white;
     }
     &__button {
-        background-color: darkcyan;
-        border: 2px solid rgb(6, 116, 116);
-        font-size: 30px;
-        color: white;
-        border-radius: 10px;
+        font-size: 50px;
+        border-radius: 30px;
+        color: $color-white;
+        background-color: $color-primary;
+        border: 2px solid $color-secondary;
+        transition: background-color 0.15s;
         &:hover {
-            background-color: rgb(24, 89, 91);
+            background-color: $color-hover;
         }
     }
     #calculator-AC {
         grid-area: AC;
-        background-color: darkcyan;
-        border: 2px solid rgb(6, 116, 116);
-        font-size: 30px;
-        color: white;
-        border-radius: 10px;
-        &:hover {
-            background-color: rgb(24, 89, 91);
-        }
     }
     &__percentage {
         grid-area: percentage;
@@ -94,9 +100,6 @@
     &__plus {
         grid-area: plus;
     }
-    &__brackets {
-        grid-area: brackets;
-    }
     &__0 {
         grid-area: zero;
     }
@@ -111,13 +114,23 @@
 @media screen and (min-width: 720px) {
     body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    
+    } 
     .calculator {
-        width: 40vw;
-        height: 100vh;
+        width: 30vw;
+        height: 85vh;
+
+        &__heading {
+            height: 1.2em;
+            font-size: 50px;
+            margin: 5px;
+            color: $color-tertiary;
+        }   
+
+        &__button {
+            font-size: 25px;
+        }
     }
 }
-   

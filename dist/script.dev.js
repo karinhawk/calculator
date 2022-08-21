@@ -6,11 +6,13 @@ var output = document.querySelector(".calculator__output");
 var clearButton = document.querySelector("#calculator-AC");
 var equals = document.querySelector(".calculator-equals");
 console.log(operators); //let firstNumber forEach  add eventListener which stores value when click on butt0n
+//set the variables as strings to be able to put things into them later
 
 var totalOutput = "";
 var firstNumber = "";
 var secondNumber = "";
 var operator = ""; //NUMBERS
+//
 
 var handleNumberPress = function handleNumberPress(event) {
   var inputtedNumber = event.target.value;
@@ -34,8 +36,6 @@ numbers.forEach(function (number) {
 //OPERATORS 
 
 var handleOperatorPress = function handleOperatorPress(event) {
-  console.log(event);
-  console.log(event.target.value);
   operator = event.target.value;
   totalOutput = firstNumber + operator;
   output.textContent = totalOutput;
@@ -46,14 +46,12 @@ operators.forEach(function (operator) {
 }); //CLEAR THE DISPLAY AND ALL STRINGS!
 
 clearButton.addEventListener("click", function (event) {
-  output.textContent = " ";
+  output.textContent = "";
   firstNumber = "";
   secondNumber = "";
   operator = "";
   totalOutput = "";
 });
-console.log(firstNumber);
-console.log(secondNumber);
 
 var addition = function addition(a, b) {
   var additionAnswer = a + b;
@@ -79,25 +77,37 @@ var division = function division(a, b) {
 var handleOperator = function handleOperator() {
   switch (operator) {
     case "+":
-      additionResult = addition(parseInt(firstNumber), parseInt(secondNumber));
+      additionResult = addition(parseFloat(firstNumber), parseFloat(secondNumber));
       output.textContent = additionResult;
       break;
 
     case "-":
-      subtractionResult = subtraction(parseInt(firstNumber), parseInt(secondNumber));
+      subtractionResult = subtraction(parseFloat(firstNumber), parseFloat(secondNumber));
       output.textContent = subtractionResult;
       break;
 
     case "÷":
-      divisionResult = division(parseInt(firstNumber), parseInt(secondNumber));
+      divisionResult = division(parseFloat(firstNumber), parseFloat(secondNumber));
       output.textContent = divisionResult;
       break;
 
     case "x":
-      multiplicationResult = multiplication(parseInt(firstNumber), parseInt(secondNumber));
+      multiplicationResult = multiplication(parseFloat(firstNumber), parseFloat(secondNumber));
       output.textContent = multiplicationResult;
       break;
   }
+
+  firstNumber = "";
+  secondNumber = "";
+  operator = "";
+  totalOutput = "";
 };
 
-equals.addEventListener("click", handleOperator);
+equals.addEventListener("click", handleOperator); //when click equals, answer appear then first and last number strings empty
+//bodmas
+//third number function
+//if second number present (and operator) then third number :)
+//in equals click call function that is an if else statement saying if there is 1 operator
+//then go to normal switch case
+//if there are 2 operators then go to bodmas switchcase
+//
