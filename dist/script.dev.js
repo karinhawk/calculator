@@ -110,11 +110,4 @@ var handleOperator = function handleOperator() {
   totalOutput = "";
 };
 
-equals.addEventListener("click", handleOperator); //when click equals, answer appear then first and last number strings empty
-//bodmas
-//third number function
-//if second number present (and operator) then third number :)
-//in equals click call function that is an if else statement saying if there is 1 operator
-//then go to normal switch case
-//if there are 2 operators then go to bodmas switchcase
-//
+equals.addEventListener("click", handleOperator);

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+
+$font: "Alumni Sans Pinstripe";
+$color-primary: darkcyan;
+$color-secondary: rgb(6, 116, 116);
+$color-tertiary: darkslategray;
+$color-hover: rgb(54, 105, 107);
+$color-white: white;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    font-weight: bolder;
+}
