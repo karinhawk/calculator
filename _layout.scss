@@ -46,14 +46,17 @@
     #calculator-AC {
         grid-area: AC;
         margin-top: 5px;
+        background-color: $color5;
     }
     &__percentage {
         grid-area: percentage;
         margin-top: 5px;
+        background-color: $color5;
     }
     &__divide {
         grid-area: divide;
         margin-top: 5px;
+        background-color: $color4;
     }
     &__7 {
         grid-area: seven;
@@ -66,6 +69,7 @@
     }
     &__multiply {
         grid-area: multiply;
+        background-color: $color4;
     }
     &__4 {
         grid-area: four;
@@ -78,6 +82,7 @@
     }
     &__minus {
         grid-area: minus;
+        background-color: $color4;
     }
     &__1 {
         grid-area: one;
@@ -90,6 +95,7 @@
     }
     &__plus {
         grid-area: plus;
+        background-color: $color4;
     }
     &__0 {
         grid-area: zero;
@@ -99,5 +105,6 @@
     }
     &__equals {
         grid-area: equals;
+        background-color: $color4;
     }
 }

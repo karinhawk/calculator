@@ -13,7 +13,6 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 
-
 //NUMBERS
 //
 const handleNumberPress = (event) => {
@@ -24,7 +23,7 @@ const handleNumberPress = (event) => {
         output.textContent = totalOutput;
     } else {
         secondNumber += inputtedNumber.toString();
-        totalOutput = firstNumber + operator + secondNumber;
+        totalOutput = `${firstNumber} ${operator} ${secondNumber}`;
         output.textContent = totalOutput;
     }
 }
@@ -33,20 +32,16 @@ numbers.forEach((number) => {
     number.addEventListener("click", handleNumberPress);
 });
 
-
 //OPERATORS 
-
 const handleOperatorPress = (event) => {
     operator = event.target.value;
-    totalOutput = firstNumber + operator;
+    totalOutput = `${firstNumber} ${operator}`;
     output.textContent = totalOutput;
 }
 
 operators.forEach((operator) => {
     operator.addEventListener("click", handleOperatorPress)
 });
-
-
 
 //CLEAR THE DISPLAY AND ALL STRINGS!
 clearButton.addEventListener("click", (event) => {
@@ -57,26 +52,20 @@ clearButton.addEventListener("click", (event) => {
     totalOutput = "";
 });
 
-
 const addition = (a, b) => {
     let additionAnswer = a + b;
     return additionAnswer;
 };
-
 
 const subtraction = (a, b) => {
     let subtractionAnswer = a - b;
     return subtractionAnswer;
 };
 
-
-
 const multiplication = (a, b) => {
     let multiplicationAnswer = a * b;
     return multiplicationAnswer;
 };
-
-
 
 const division = (a, b) => {
     let divisionAnswer = a / b;
@@ -120,3 +109,4 @@ const handleOperator = () => {
 }
 
 equals.addEventListener("click", handleOperator);
+

@@ -23,7 +23,7 @@ var handleNumberPress = function handleNumberPress(event) {
     output.textContent = totalOutput;
   } else {
     secondNumber += inputtedNumber.toString();
-    totalOutput = firstNumber + operator + secondNumber;
+    totalOutput = "".concat(firstNumber, " ").concat(operator, " ").concat(secondNumber);
     output.textContent = totalOutput;
   }
 };
@@ -34,7 +34,7 @@ numbers.forEach(function (number) {
 
 var handleOperatorPress = function handleOperatorPress(event) {
   operator = event.target.value;
-  totalOutput = firstNumber + operator;
+  totalOutput = "".concat(firstNumber, " ").concat(operator);
   output.textContent = totalOutput;
 };
 
