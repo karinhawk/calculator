@@ -5,13 +5,14 @@ var operators = document.querySelectorAll(".calculator-operator");
 var output = document.querySelector(".calculator__output");
 var clearButton = document.querySelector("#calculator-AC");
 var equals = document.querySelector(".calculator-equals");
-console.log(operators); //let firstNumber forEach  add eventListener which stores value when click on butt0n
+var calculator = document.querySelector(".calculator"); //let firstNumber forEach  add eventListener which stores value when click on butt0n
 //set the variables as strings to be able to put things into them later
 
 var totalOutput = "";
 var firstNumber = "";
 var secondNumber = "";
-var operator = ""; //NUMBERS
+var operator = "";
+var result = 0; //NUMBERS
 //
 
 var handleNumberPress = function handleNumberPress(event) {
@@ -34,6 +35,11 @@ numbers.forEach(function (number) {
 
 var handleOperatorPress = function handleOperatorPress(event) {
   operator = event.target.value;
+
+  if (firstNumber === "") {
+    firstNumber = result;
+  }
+
   totalOutput = "".concat(firstNumber, " ").concat(operator);
   output.textContent = totalOutput;
 };
@@ -48,6 +54,7 @@ clearButton.addEventListener("click", function (event) {
   secondNumber = "";
   operator = "";
   totalOutput = "";
+  calculator.style.transform = "none";
 });
 
 var addition = function addition(a, b) {
@@ -73,6 +80,17 @@ var division = function division(a, b) {
 var percentageConversion = function percentageConversion(a) {
   var percentageAnswer = a / 100;
   return percentageAnswer;
+};
+
+var handleImmaturity = function handleImmaturity() {
+  if (firstNumber == 5318008) {
+    calculator.style.transform = 'rotate(180deg)';
+    setTimeout(function () {
+      alert("That's really immature...");
+    }, 1000);
+  } else if (firstNumber == "") {
+    calculator.style.transform = 'rotate(0deg)';
+  }
 }; //switch case function= pull when equals is clicked
 //parse float to turn string numbers into numbers and allow for decimal calculations
 
@@ -80,28 +98,28 @@ var percentageConversion = function percentageConversion(a) {
 var handleOperator = function handleOperator() {
   switch (operator) {
     case "+":
-      additionResult = addition(parseFloat(firstNumber), parseFloat(secondNumber));
-      output.textContent = additionResult;
+      result = addition(parseFloat(firstNumber), parseFloat(secondNumber));
+      output.textContent = result;
       break;
 
     case "-":
-      subtractionResult = subtraction(parseFloat(firstNumber), parseFloat(secondNumber));
-      output.textContent = subtractionResult;
+      result = subtraction(parseFloat(firstNumber), parseFloat(secondNumber));
+      output.textContent = result;
       break;
 
     case "÷":
-      divisionResult = division(parseFloat(firstNumber), parseFloat(secondNumber));
-      output.textContent = divisionResult;
+      result = division(parseFloat(firstNumber), parseFloat(secondNumber));
+      output.textContent = result;
       break;
 
     case "x":
-      multiplicationResult = multiplication(parseFloat(firstNumber), parseFloat(secondNumber));
-      output.textContent = multiplicationResult;
+      result = multiplication(parseFloat(firstNumber), parseFloat(secondNumber));
+      output.textContent = result;
       break;
 
     case "%":
-      percentageResult = percentageConversion(parseFloat(firstNumber));
-      output.textContent = percentageResult;
+      result = percentageConversion(parseFloat(firstNumber));
+      output.textContent = result;
   }
 
   firstNumber = "";
@@ -110,4 +128,5 @@ var handleOperator = function handleOperator() {
   totalOutput = "";
 };
 
+equals.addEventListener("click", handleImmaturity);
 equals.addEventListener("click", handleOperator);

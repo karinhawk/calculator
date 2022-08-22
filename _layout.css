@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: "Alumni Sans Pinstripe";
+  font-family: "Kanit";
   font-weight: bolder;
 }
 
@@ -24,7 +24,7 @@
 }
 .calculator__output {
   grid-area: output;
-  font-size: 30px;
+  font-size: 50px;
   padding-top: 8vh;
   padding-right: 1vw;
   text-align: end;
@@ -43,20 +43,33 @@
 .calculator__button:hover {
   background-color: #36696b;
 }
+.calculator__button--top {
+  background-color: #9f9b24;
+  transition: background-color 0.15s;
+}
+.calculator__button--top:hover {
+  background-color: #6c6928;
+}
+.calculator__button--side {
+  background-color: #9f9b24;
+  transition: background-color 0.15s;
+}
+.calculator__button--side:hover {
+  background-color: #6c6928;
+}
 .calculator #calculator-AC {
   grid-area: AC;
   margin-top: 5px;
-  background-color: purple;
 }
 .calculator__percentage {
   grid-area: percentage;
   margin-top: 5px;
-  background-color: purple;
+  background-color: #9f9b24;
 }
 .calculator__divide {
   grid-area: divide;
   margin-top: 5px;
-  background-color: green;
+  background-color: #7c8000;
 }
 .calculator__7 {
   grid-area: seven;
@@ -69,7 +82,7 @@
 }
 .calculator__multiply {
   grid-area: multiply;
-  background-color: green;
+  background-color: #7c8000;
 }
 .calculator__4 {
   grid-area: four;
@@ -82,7 +95,7 @@
 }
 .calculator__minus {
   grid-area: minus;
-  background-color: green;
+  background-color: #7c8000;
 }
 .calculator__1 {
   grid-area: one;
@@ -95,7 +108,7 @@
 }
 .calculator__plus {
   grid-area: plus;
-  background-color: green;
+  background-color: #7c8000;
 }
 .calculator__0 {
   grid-area: zero;
@@ -105,5 +118,5 @@
 }
 .calculator__equals {
   grid-area: equals;
-  background-color: green;
+  background-color: #7c8000;
 }

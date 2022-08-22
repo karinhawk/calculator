@@ -24,7 +24,7 @@
     }
     &__output {
         grid-area: output;
-        font-size: 30px;
+        font-size: 50px;
         padding-top: 8vh;
         padding-right: 1vw;
         text-align: end;
@@ -42,11 +42,24 @@
         &:hover {
             background-color: $color-hover;
         }
+        &--top {
+            background-color: $color5;
+            transition: background-color 0.15s;
+            &:hover {
+                background-color: $color6;
+            }
+        }
+        &--side {
+            background-color: $color5;
+            transition: background-color 0.15s;
+            &:hover {
+                background-color: $color6;
+            }
+        }
     }
     #calculator-AC {
         grid-area: AC;
         margin-top: 5px;
-        background-color: $color5;
     }
     &__percentage {
         grid-area: percentage;
